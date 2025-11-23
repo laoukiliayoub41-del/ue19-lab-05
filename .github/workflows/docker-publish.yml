@@ -46,12 +46,15 @@ jobs:
         with:
           context: . # Définit le répertoire courant comme contexte de construction Docker (là où se trouve le Dockerfile).
           push: true # Indique que l'image doit être poussée automatiquement après la construction.
-          tags: ghcr.io/sim0nr/ue19-lab-05
+          
+          # 🚨 CORRECTION : L'utilisateur laoukiliayoub41-del est utilisé ici
+          tags: ghcr.io/laoukiliayoub41-del/ue19-lab-05
           # Spécifie le nom et le tag de l'image Docker :
-          # - ghcr.io/sim0nr/ue19-lab-05 : chemin vers le registre.
+          # - ghcr.io/laoukiliayoub41-del/ue19-lab-05 : chemin vers le registre.
 
       # Étape 5 : Vérification de l'image Docker pour les vulnérabilités
       - name: Analyze Docker image with Trivy
         uses: aquasecurity/trivy-action@master # Utilise l'outil Trivy pour détecter les failles de sécurité
         with:
-          image-ref: ghcr.io/sim0nr/ue19-lab-05 # Référence de l'image Docker à scanner
+          # 🚨 CORRECTION : L'utilisateur laoukiliayoub41-del est utilisé ici
+          image-ref: ghcr.io/laoukiliayoub41-del/ue19-lab-05 # Référence de l'image Docker à scanner
